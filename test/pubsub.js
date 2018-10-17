@@ -13,22 +13,7 @@ const auto = require('async/auto')
 
 const DaemonFactory = require('ipfsd-ctl')
 
-/*
- * Wait for a condition to become true.  When its true, callback is called.
- */
-function waitFor (predicate, callback) {
-  const ttl = Date.now() + (10 * 1000)
-  const self = setInterval(() => {
-    if (predicate()) {
-      clearInterval(self)
-      return callback()
-    }
-    if (Date.now() > ttl) {
-      clearInterval(self)
-      return callback(new Error('waitFor time expired'))
-    }
-  }, 500)
-}
+const waitFor = require('./utils/wait-for')
 
 const connect = (jsD, goD, callback) => {
   parallel([
