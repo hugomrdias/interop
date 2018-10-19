@@ -1,0 +1,19 @@
+image: node:10
+stages:
+    - test
+
+variables:
+    DOCKER_DRIVER: overlay2
+
+before_script:
+    - npm install
+
+test:
+    stage: test
+    script:
+        - echo $CI_PIPELINE_SOURCE
+        - echo $CI_JOB_TOKEN
+        - npm show ipfs version
+    only:
+        - master
+
