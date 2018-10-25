@@ -1,18 +1,19 @@
 image: node:10
 stages:
-    - test
+  - test
 
 variables:
-    DOCKER_DRIVER: overlay2
+  DOCKER_DRIVER: overlay2
 
 before_script:
-    - npm ci -q
+  - npm ci -q
 
 test:
-    stage: test
-    script:
-        - echo $CI_PIPELINE_SOURCE
-        - echo $CI_JOB_TOKEN
-        - npm show ipfs version
-        - "npm install && npm install ipfs@`npm show ipfs-ci-test version --tag next` && npm test"
-
+  stage: test
+  script:
+    - echo $CI_PIPELINE_SOURCE
+    - echo $CI_JOB_TOKEN
+    - npm show ipfs version
+    - "npm install && npm install ipfs@`npm show ipfs-ci-test version --tag next` && npm test"
+  variables:
+    - $CI_PIPELINE_SOURCE == "pipeline"
