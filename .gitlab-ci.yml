@@ -14,8 +14,7 @@ test:
         - echo $CI_PIPELINE_SOURCE
         - echo $CI_JOB_TOKEN
         - npm show ipfs version
-        - echo "npm install && npm install ipfs@`npm show ipfs version --tag next` && npm test"
-        - "false"
+        - "npm install && npm install ipfs@`npm show ipfs-ci-test version --tag next` && npm test"
     only:
-        - master
+        - triggers
 
