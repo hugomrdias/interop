@@ -15,5 +15,6 @@ test:
     - echo $CI_JOB_TOKEN
     - npm show ipfs version
     - "npm install && npm install ipfs@`npm show ipfs-ci-test version --tag next` && npm test"
-  variables:
-    - $CI_PIPELINE_SOURCE == "pipeline"
+  only:
+    variables:
+       - $CI_PIPELINE_SOURCE == "pipeline"
