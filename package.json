@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/ipfs/interop#readme",
   "devDependencies": {
-    "aegir": "^15.1.0",
+    "aegir": "^47.0.25",
     "async": "^2.6.1",
     "bl": "^2.0.1",
     "bs58": "^4.0.1",
@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^7.10.0",
     "expose-loader": "~0.7.5",
     "form-data": "^2.3.2",
-    "go-ipfs-dep": "~0.4.17",
+    "go-ipfs-dep": "~0.4.23",
     "hat": "0.0.3",
     "ipfs": "~0.31.6",
     "ipfs-api": "^24.0.0",
